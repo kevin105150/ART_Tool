@@ -63,7 +63,7 @@ clip_values = (min_pixel_value, max_pixel_value)
 
 # Train Data loader
 if select < 3:
-    train_set = DL.MNISTDataset(x_train, y_train, DL.data_transform)
+    train_set = DL.MNISTDataset(x_train, y_train, DL.data_transform_Resize)
 else:
     train_set = DL.MNISTDataset(x_train, y_train, DL.data_transform_Resize)
 data_loader = DataLoader(dataset=train_set, batch_size=batch_size)

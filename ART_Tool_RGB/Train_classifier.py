@@ -10,18 +10,13 @@ import os
 
 def Fit_classifier(model, clip_values, criterion, optimizer, data_Generator, x_train, y_train, isload, epoch_num, batch_size, device_type, text, select):
     
-    if select < 3:
-        input_shape = (3, 256, 256)
-    else:
-        input_shape = (3, 256, 256)
-    
     # Create the ART classifier RGB
     classifier = PyTorchClassifier(
         model = model,
         clip_values = clip_values,
         loss = criterion,
         optimizer = optimizer,
-        input_shape = input_shape,
+        input_shape = (3, 224, 224),
         nb_classes = 10,
         device_type = device_type
     )
