@@ -54,11 +54,11 @@ model, optimizer, isload = AF.Load_Model(text, model, optimizer)
 
 # Basic parameter
 torch.backends.cudnn.benchmark = False
-device_type = 'cuda:1'
+device_type = 'cuda:0'
 epoch_num = 20
 batch_size = 64
 max_iter = 20
-eps = 0.9
+eps = 2
 clip_values = (min_pixel_value, max_pixel_value)
 
 # Train Data loader
